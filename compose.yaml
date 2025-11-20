@@ -1,0 +1,17 @@
+services:
+  preauth:
+    env_file:
+      # TODO rename ".env.example" to just ".env"
+      # edit USER_ID and GROUP_ID if needed
+      - .env
+    image: digitaladapt/tock
+    init: true
+    restart: unless-stopped
+    user: ${USER_ID}:${GROUP_ID}
+    volumes:
+      - tock-crons:/tock/crons
+
+volumes:
+  tock-crons:
+
+
