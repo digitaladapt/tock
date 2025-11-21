@@ -1,6 +1,6 @@
 FROM alpine
 
-RUN mkdir -p /tock/crons
+RUN mkdir /tock
 WORKDIR /tock
 COPY . /tock/
 
