@@ -1,8 +1,9 @@
-FROM alpine
+# vim: set ft=dockerfile :
+FROM php:cli-alpine
 
 RUN mkdir /tock
 WORKDIR /tock
-COPY ./crons /tock/
+COPY ./crons-php /tock/crons
 COPY ./init.sh /tock/
 COPY ./license.txt /tock/
 COPY ./readme.md /tock/
