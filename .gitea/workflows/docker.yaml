@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build standard image
+      - name: Build image
         uses: docker/build-push-action@v5
         with:
           context: .
@@ -32,6 +32,7 @@ jobs:
             ${{ vars.DOCKERHUB_TARGET }}:latest
             ${{ vars.DOCKERHUB_TARGET }}:${{ github.ref_name }}
 
+      # for this project, we have a php image variant
       - name: Build php image
         uses: docker/build-push-action@v5
         with:
